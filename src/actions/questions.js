@@ -86,7 +86,6 @@ export const fetchQuestions = () => (dispatch, getState) => {
 };
 
 export const submitAnswer = (value) => (dispatch, getState) => {
-    // console.log(value);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/api/questions`, {
         method: 'PUT',
@@ -106,8 +105,5 @@ export const submitAnswer = (value) => (dispatch, getState) => {
         }
     })
     .catch(err => dispatch(incorrectAnswerSuccess(err)))
-        // console.log(res);
-        // return dispatch(submitAnswerFeedback(res));
-    
 };
 
